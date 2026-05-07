@@ -19,11 +19,11 @@ public class Main2 {
             // Lê a opção e limpa o buffer do teclado
             opcao = leitor.nextInt();
             leitor.nextLine(); 
-
+            
             switch (opcao) {
                 case 1:
                     System.out.print("Nome da tarefa a adicionar: ");
-                    
+                    tarefas.add(leitor.nextLine());
                     System.out.println("Tarefa adicionada!");
                     break;
 
@@ -32,13 +32,17 @@ public class Main2 {
                     if (tarefas.isEmpty()) {
                         System.out.println("A lista está vazia.");
                     } else {
-                        
+                    	  for (int i = 0; i < tarefas.size(); i++) {
+                              System.out.println( i+1  +  tarefas.get(i));
+                    }
                     }
                     break;
 
                 case 3:
                     System.out.print("Número da tarefa a remover: ");
-                    int id = leitor.nextInt();
+                    int id = leitor.nextInt()-1;
+				int i = 0;
+				tarefas.remove(i);  
                     if (id >= 0 && id < tarefas.size()) {
                        
                         System.out.println("Tarefa removida!");
